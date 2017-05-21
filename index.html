@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS HMWK 2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="page">
+        <div class="main-header">
+            <div class="top-bar">
+                <div class="container space-between">
+                    <div class="logo"><img src="js-ninja.png"></div>
+                    <nav class="main-nav">
+                        <h1>JS Essentials Homework 2</h1>
+                        <h2>Learn some functions stuff</h2>
+                        <ul>
+                            <li>
+                                <input class="hide" id="hd-1" type="checkbox">
+                                <label for="hd-1"><img class="btn" src="js.png">   Kata 1-2: Find the sum of numbers in range</label>
+                                <div class="container">
+                                <p>
+Task:<br>
+    a)Find and display total sum of numbers from 1 to 3<br>
+    b)Find and display total sum of numbers from 20 to 220
+    <hr>
+																</p>
+																
+                                <div class="code">
+                                    <pre>
+function sum(start, end) {
+
+  /*  if (typeof(start) !== 'number' || typeof(end) !== 'number') {
+        return 'Please, enter a proper number' } */
+   /* Use this data type check when running in DevTools Console */
+
+     if (start < end) {
+         var result = end;
+         for (var i = end; i > start; --i) {
+             result = result + (i - 1);
+         }
+     } else if (start === end) {
+         result = start;
+     } else {
+         result = end;
+         for (var i = end; i < start; ++i) {
+             result = result + (i + 1);
+         }
+         return result;
+     }
+}
+                            				</pre>
+                            			</div>
+                                </div>
+                                <form class="values">
+                                                                <input type="number" id="startNum" min="-1000" max="1000">
+                                                                <input type="number" id="endNum" min="-1000" max="1000">
+                                                                <input id="btn" type="button" value="Run" >
+                                                                <div class="resulting" id="someresult"></div>
+                                                                </form>
+                                                                
+                                                                
+                            </li>
+                            <li>
+                                <input class="hide" id="hd-2" type="checkbox">
+                                <label for="hd-2"><img class="btn" src="js.png">   Kata 3: Display all even numbers in range</label>
+                                <div class="container">
+                                <p>
+Task: <br>Display even numbers from 1 to 20 by using for loop.
+<hr>
+                                </p>
+                                <div class="code">
+                                    <pre>
+function evenNums(start, end) {
+   /* if (typeof(start) !== 'number' || typeof(end) !== 'number') {
+	  		return 'Please, enter a proper number'
+		 } */
+    /* Use this data type check when running in DevTools Console */
+	  var result = [];
+		for (var i = start; i <= end; i++) {
+		    if (i % 2 === 0) {
+		      	result.push(i);
+		      }
+		  	}
+	  return result;
+}		                                    
+
+									</pre>
+                                </div>
+                                </div>
+                                 <form class="values">
+                                                                <input type="number" id="startEven" min="-1000" max="1000">
+                                                                <input type="number" id="endEven" min="-1000" max="1000">
+                                                                <input id="btnEven" type="button" value="Run" >
+                                                                <div class="resulting" id="evenNumsResult"></div>
+                                                                </form>
+                            </li>
+                            <li><input class="hide" id="hd-4" type="checkbox">
+                                <label for="hd-4"><img class="btn" src="js.png">   Kata 4: Display all odd numbers in range</label>
+                                <div class="container">
+                                <p>
+Task: <br>Display odd numbers from 10 to 30 by using ‘while’ loop.
+<hr>
+</p>        
+                    <div class="code">
+                                    <pre>
+function oddNums(start, end) {
+   /* if (typeof(start) !== 'number' || typeof(end) !== 'number') {
+        return 'Please, enter a proper number'
+    } */
+    /* Use this data type check when running in DevTools Console */
+    var result = [];
+    var i = start;
+    while (i <= end) {
+        if (i % 2 === 1) {
+            result.push(i);
+        }
+        i++;
+    }
+    return result;
+}                                   
+														</pre>
+                                </div>
+                                </div>
+                                     <form class="values">
+                                                                <input type="number" id="startOdd" min="-1000" max="1000">
+                                                                <input type="number" id="endOdd" min="-1000" max="1000">
+                                                                <input id="btnOdd" type="button" value="Run" >
+                                                                <div class="resulting" id="oddNumsResult"></div>
+                                                                </form>
+                            </li>
+
+
+
+                            <li>
+                                <input class="hide" id="hd-5" type="checkbox">
+                                <label for="hd-5"><img class="btn" src="js.png">  Kata 5-6: Display all number till stop condition (for && while)</label>
+                                <div class="container">
+                                <p>
+Task: <br>Display numbers from 1 to 15 using ‘for’ loop, once num of iteration<br>
+ is equal the num of month of your birthday then stop execution of loop
+<hr>
+</p>        
+                                <div class="code">
+                                    <pre>
+function displayNumbers(start, end, birth) {
+    /* if (typeof(start) !== 'number' || typeof(end) !== 'number') {
+        return 'Please, enter a proper number'
+    } */
+     /* Use this data type check when running in DevTools Console */
+    var result = [];
+    for (var i = start; i <= birth; i++) {
+        result.push(i);
+    }
+    return result;
+}
+
+function displayNumbers(start, end, birth) {
+    if (typeof(start) !== 'number' || typeof(end) !== 'number') {
+        return 'Please, enter a proper number'
+    }
+    var result = [];
+    var i = start;
+    while (i <= birth && i <= end) {
+        result.push(i);
+        i++;
+    }
+    return result;
+}
+
+														</pre>
+                                </div>
+                            </div>
+                            <form class="values">
+          <input type="number" id="startIter" min="-100" max="100">
+          <input type="number" id="endIter" min="-100" max="100">
+          <input type="number" id="stopIter" min="1" max="12">
+          <input id="btnStop" type="button" value="Run" >
+          <div class="resulting" id="iterationResults"></div>
+     </form>
+
+
+                            </li>
+                 
+
+
+
+
+                            <li>
+                                <input class="hide" id="hd-7" type="checkbox">
+                                <label for="hd-7"><img class="btn" src="js.png">  Kata 7: "Prompt" him to death (while / do...while)</label>
+                                <div class="container">
+                                <p>
+Task: 
+-Write code which will ask user (prompt ) to put number<br> greater than 100, repeat prompt until user put required number,<br> then display result of prompt
+  do it using ‘while’
+  do it using ‘do while’
+<hr>
+</p>        
+                                <div class="code">
+                                    <pre>
+function display(input) {
+    input = prompt('Enter number greater than 100');
+    debugger;
+    console.log(typeof(input));
+    debugger;
+    while (isNaN(input) || typeof(parseInt(input)) !== 'number') {
+        input = prompt('What\'s that? Give me some numbers, bro!')
+    }
+    console.log(typeof(input));
+    while (parseInt(input) < 100) {
+        input = prompt('Your number is too small, enter a new one');
+    }
+    alert(`Your result is ${input}`)
+}	
+
+
+function display(input) {
+    input = prompt('Enter number greater than 100');
+    debugger;
+    do {
+        input = prompt('What\'s that? Give me some numbers, bro!')
+    } while (isNaN(input) || typeof(parseInt(input)) !== 'number');
+
+    do {
+        input = prompt('Your number is too small, enter a new one');
+    } while (parseInt(input) < 100);
+
+    alert(`Your result is ${input}`)
+}
+																</pre>
+                                </div>
+                                </div>
+              <form class="values">
+          <input id="promptBtn" type="button" value="Prompt Hell" >
+          
+     </form>
+                            </li>
+
+
+                            <li>
+                                <input class="hide" id="hd-8" type="checkbox">
+                                <label for="hd-8"><img class="btn" src="js.png">  Kata 8: King of the Hill </label>
+                                <div class="container">
+                                <p>
+Task: 
+Show in console using for.
+#
+##
+###
+####
+#####
+######
+#######
+########
+</p>        
+                                <div class="code">
+                                    <pre>
+function hashes(num) {
+    if (typeof(num) !== 'number') {
+        return 'Please, enter a proper number'
+    }
+    var result = '';
+    for (var i = 0; i <= num; i++) {
+        result += '#';
+        console.log(result);
+    }
+}
+																</pre>
+                                </div>
+                                </div>
+                                <form class="values">
+          <input type="number" id="bottom" min="1" max="15">
+          <input id="createHill" type="button" value="Run" >
+          <div class="resulting" id="hashHill"></div>
+     </form>                            
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+           <!-- <div class="container">
+                <div class="banner">
+                    <div class="button"><img src="html5-css-javascript-logos.png"></div>
+                </div>
+            </div> -->
+        </div>
+<script src="scripts.js"></script> 
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+html {
+  font-size: 16px;
+  background-color: yellow;
+}
+html .page {
+  width: 1400px;
+
+}
+html .container {
+  width: 940px;
+  margin: auto;
+  display: flex;
+  color: #EB7412;
+}
+.main-nav h1, h2 {
+-webkit-text-stroke: 2px black;
+
+}
+
+html .top-bar {
+  font-size: 34px;
+}
+html .logo {
+  font-family: 'cubanoregular', Arial, sans-serif;
+  color: #fff;
+  padding-left: 44px;
+  padding-top: 70px;
+  letter-spacing: 3px;
+  size: 50%;
+}
+html .main-header {
+	margin: 0 auto;
+  padding-left: 20px;
+  
+  height: 560px;
+  color: #fff;
+}
+html .main-nav {
+  padding-top: 3px;
+}
+html .main-nav ul {
+	list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+html .main-nav ul li {
+	padding-top: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+html .banner {
+  width: 100%;
+  text-align: center;
+  background-size:50%;
+  background-position: center;
+}
+
+.button {
+	margin-left: 300px;
+	height: 200px;
+	width: 400px;
+  font-weight: bolder;
+  color: #fff;
+  border: 3px solid #fff;
+}
+
+.button img {
+	height: 150px;
+	width: 350px;
+	padding: 20px 20px 20px 20px;
+}
+
+/*---------------------------------------*/
+
+.values > *{
+	display: inline-table;
+	padding-left: 5px;
+}
+
+pre {
+	width: 200px;
+}
+
+label > .btn {
+	width: 8%;
+}
+
+input[type="number"] {
+	width: 50px;
+}
+
+.resulting {
+  margin-top: 5px;
+  display: inline-block;
+  width: 140px;
+  height: 20px;
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+#evenNumsResult, #oddNumsResult, #iterationResults  {
+  width: auto;
+  min-width: 140px;
+  padding: 0px 10px 0px 10px; 
+}
+
+
+.container > p {
+	font-size: 18px;
+}
+
+
+
+
+
+
+
+/*-------------------------------------------*/
+/* Закриті.відкриті вікна*/
+
+/* Приховування блоків*/
+.hide,
+.hide + label ~ div {
+    display: none;
+    text-align: left;
+}
+
+.hide + label {
+    margin: 0;
+    padding: 0;
+    color: green;
+    cursor: pointer;
+    display: inline-block;
+}
+/* мітка при активному стані */
+.hide:checked + label {
+    color: red;
+    border-bottom: 0;
+}
+/* відкриваєм вміст коли чекбокс активний  */
+.hide:checked + label + div {
+    display: block; 
+    color:black;
+    font-size: 12px;
+    background: #efefef;
+    -moz-box-shadow: inset 3px 3px 10px #7d8e8f;
+    -webkit-box-shadow: inset 3px 3px 10px #7d8e8f;
+    box-shadow: inset 3px 3px 10px #7d8e8f;
+    margin-left: 20px;
+    padding: 10px;
+    /* анімація при відкривання */
+     -webkit-animation:fade ease-in 0.5s; 
+     -moz-animation:fade ease-in 0.5s;
+     animation:fade ease-in 0.5s; 
+}
+/* анімація для відкритих блоків */
+@keyframes fade {
+    from { opacity: 0; }
+to { opacity: 1 }   
+}
+.hide + label:before {
+    background-color: orange;
+    color: #fff;
+  	content: "\002B"; 
+    display: block;
+    float: left;
+    font-size: 22px; 
+    font-weight: bold;
+    height: 20px;
+    line-height: 16px;
+    margin: 3px 5px;
+    text-align: center;
+    width: 20px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+.hide:checked + label:before {
+   content: "\2212"; 
+}
