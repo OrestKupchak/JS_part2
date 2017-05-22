@@ -182,7 +182,6 @@ else {
    var input = prompt('Your number is too small, enter a new one');
       }
  }
-document.getElementById('promptResult').innerHTML =  result;
 alert(`Your result is ${input}`)
 }
 
