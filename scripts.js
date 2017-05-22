@@ -182,7 +182,7 @@ else {
    var input = prompt('Your number is too small, enter a new one');
       }
  }
-alert(`Your result is ${input}`)
+alert('Your result is '+ input)
 }
 
 /*----------------------------------------------------------------------------------*/
