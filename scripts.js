@@ -39,7 +39,6 @@ var start = parseInt(document.getElementById('startEven').value);
     var result = [];
     for (var i = start; i <= end; i++) {if (i % 2 === 0) { result.push(i); } }
                       } 
-
    else if (start === end) {
       if (start % 2 === 0) { var result = start; } 
       else { var result = "This number is odd" }
@@ -63,15 +62,15 @@ var start = parseInt(document.getElementById('startOdd').value);
   var end = parseInt(document.getElementById('endOdd').value);
   debugger;
      if (start < end) {
-
         var result = [];
         var i = start;
-while (i <= end) {        if ( i % 2 === 1) { result.push(i); }   i++  }
+while (i <= end) {  if ( i % 2 === 1) { result.push(i); }
+                    else if (i % 2 === -1) { result.push(i); }
+                                                                 i++ } 
                       }              
    else if (start === end) {
-
-      if (start % 2 === 1) { var result = start; }  else { var result = "This number is even" }
-
+      if (start % 2 === 1) { var result = start; }  
+      else { var result = "This number is even" }
                           }
    else {
       var result = [];
@@ -106,20 +105,16 @@ document.getElementById('iterationResults').innerHTML =  result;
 
 /*
 document.getElementById('btnStop').addEventListener('click', displayNumbers, false) 
-
-
 function displayNumbers (start, end, birth){
 var start = parseInt(document.getElementById('startIter').value);
 var end = parseInt(document.getElementById('endIter').value);
 var birth = parseInt(document.getElementById('stopIter').value);
   debugger;
-
 var result = [];
 if (start < -100 || start > 100) {var result = "Let's count only between -100 and 100"}
 else if (end < -100 || end > 100) { var result = "Let's count only between -100 and 100"}
 else if (birth < 1 || birth > 12) {var result = "There's only twelve months, mate :)"}
 else {
-
 if (birth < start) { 
     if (start < end) {
       var result = []; for (var i = start; i <= birth; i++) { while(result.length <= birth) { result.push(start++); } }
@@ -127,8 +122,6 @@ if (birth < start) {
       var result = []; for (var i = start; i > birth; i--) { while(result.length < birth) {result.push(start--); } }
   } else { var result = 'Are U seriuos? Gimme some different numbers :)'; }
  }
-
-
 else if (birth > end) { 
   if (start < end) {
     var result = []; for (var i = start; i <= end; i++) {  result.push(start++); }
@@ -136,20 +129,16 @@ else if (birth > end) {
       var result = []; for (var i = start; i > end; i--) {  result.push(start--); }
   } else { var result = 'Are U seriuos? Gimme some different numbers :)'; }
       }
-
-
 else if (birth === start || birth === end) {
         if (birth === start) { var result = []; for (var i = start; i <= birth; i++) {  while(result.length <= birth) { result.push(start++); } } } 
         else if (birth === end) {   var result = []; for (var i = start; i <= birth; i++) {  while(result.length <= birth) { result.push(start++); } }  } 
                   }   
 else {
         if (start < end) { var result = []; for (var i = start; i < birth; i++) {  while(result.length < birth) { result.push(start++); } } } 
-
         else if (start === end) { var result = 'Are U seriuos? Gimme some different numbers :)'; }
 
         else { var result = []; for (var i = start; i > birth; i--) {   while(result.length < birth) { result.push(start--); } }  } 
              }
-
            }
 document.getElementById('iterationResults').innerHTML =  result; 
 }
@@ -171,13 +160,13 @@ if (spacesPattern.test(input)) {
 var input = prompt ('You entered nothing, only spaces. Try again');
     }
 else {
-//  debugger;
+  debugger;
     while (isNaN(input) || typeof(parseInt(input)) !== 'number' || input.length === 0 || (spacesPattern.test(input))) { 
      var input = prompt('What\'s that? Give me some numbers, bro!')
     } 
 
     
-  while (parseInt(input) < 100) {
+  while (parseInt(input) < 100 ||  (isNaN(input)) || input.length === 0 || (spacesPattern.test(input))) {
     if (isNaN(input)) {prompt('What\'s that? Give me some numbers, bro!')}
    var input = prompt('Your number is too small, enter a new one');
       }
